@@ -36,19 +36,23 @@ public class Window extends PApplet {
             data = dr.parser();
             dataLists = dataCalculator.ModelToLists(data);
             
-            for (ArrayList<Float> dataList : dataLists) {
-                ArrayList<int[]> map = new ArrayList();
-                //map.add(dataCalculator.mapData(dataList.get(i), dataList.get(i + 1), new int[]{100,100}));
-            }
+            for (int i = 0; i < dataLists.size(); i ++) {
+                for (int j = 0; i < dataLists.size(); j++){
+                    if(i != j){                       
+                        mappedData.add(dataCalculator.mapData(dataLists.get(i), dataLists.get(j), new int[]{100,100}));
+                    }
+                    
+                }
+                
+                
+                
+            } 
             
         } catch (IOException ex) {
             Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-
     }
 
     public void draw() {
@@ -62,7 +66,6 @@ public class Window extends PApplet {
         for (ArrayList<int[]> mapping : mappedData) {
             dataDrawer.drawScatterGraph(new int[]{200, 300}, new int[]{100, 100}, mapping);
         }
-
     }
 
 }
