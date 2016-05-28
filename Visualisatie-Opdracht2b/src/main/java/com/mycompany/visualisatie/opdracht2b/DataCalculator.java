@@ -46,16 +46,16 @@ public class DataCalculator {
         return mappedData;
     }
 
-    public ArrayList<int[]> mapData(ArrayList<Float> dataOne, ArrayList<Float> dataTwo, int[] dimension) {
+    public ArrayList<int[]> mapData(ArrayList<Float> dataOne, ArrayList<Float> dataTwo, int[] position) {
         ArrayList<int[]> mappedData = new ArrayList();
 
         float[] minMaxOne = getMinMax(dataOne);
         float[] minMaxTwo = getMinMax(dataTwo);
 
         for (int i = 0; i < dataOne.size(); i++) {
-            int[] mapping = null;
-            mapping[0] = (int) map(dataOne.get(i), minMaxOne[0], minMaxOne[1], dimension[0], dimension[1]);
-            mapping[1] = (int) map(dataTwo.get(i), minMaxTwo[0], minMaxTwo[1], dimension[0], dimension[1]);
+            int[] mapping = {0,0};
+            mapping[0] = (int) map(dataOne.get(i), minMaxOne[0], minMaxOne[1], position[0] + 100, position[0]);
+            mapping[1] = (int) map(dataTwo.get(i), minMaxTwo[0], minMaxTwo[1], position[1], position[1] - 100);
 
             mappedData.add(mapping);
         }

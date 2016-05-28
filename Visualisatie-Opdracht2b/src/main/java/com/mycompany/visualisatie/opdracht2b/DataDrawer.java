@@ -20,10 +20,9 @@ public class DataDrawer {
 
     private PApplet window;
 
-
     public DataDrawer(PApplet window) {
         this.window = window;
-        
+
     }
 
     //String[] input is de 2 data die je wilt laten tekenen
@@ -31,10 +30,11 @@ public class DataDrawer {
         window.line(position[0], position[1], position[0] + dimension[1], position[1]);
         window.line(position[0], position[1], position[0], position[1] - dimension[0]);
 
-        for (int[] mappedData : data) {
-            window.ellipse(mappedData[0], mappedData[1], 1, 1);
-            
-        }
+        if (data != null) {
+            for (int[] mappedData : data) {
+                window.ellipse(mappedData[0], mappedData[1], 1, 1);
 
+            }
+        }
     }
 }

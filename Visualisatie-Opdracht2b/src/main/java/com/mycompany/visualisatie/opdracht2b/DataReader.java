@@ -51,18 +51,19 @@ public class DataReader {
         ArrayList<DataModel> list = new ArrayList();
         while (sc.hasNext()) {
             String[] row = sc.nextLine().split(regex);
-
+            DataModel dm = new DataModel();
             for (int i = 0; i < row.length; i++) {
-                DataModel dm = new DataModel();
+
                 dm.setStudentNumber(Integer.parseInt(row[0]));
                 dm.setAge(Integer.parseInt(row[1]));
                 dm.setAnalyse(Float.parseFloat(row[2].replaceAll(",", ".")));
+                //System.out.println(Float.parseFloat(row[2].replaceAll(",", ".")));
                 dm.setDevelopment(Float.parseFloat(row[3].replaceAll(",", ".")));
                 dm.setProject(Float.parseFloat(row[4].replaceAll(",", ".")));
                 dm.setSkills(Float.parseFloat(row[5].replaceAll(",", ".")));
-                list.add(dm);
 
             }
+            list.add(dm);
         }
         return list;
     }
