@@ -5,6 +5,8 @@
  */
 package com.mycompany.visualisatie.opdracht2b;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Lars
@@ -65,5 +67,6 @@ public class DataModel {
     public void setSkills(float skills) {
         this.skills = skills;
     }
+   
     
 }
