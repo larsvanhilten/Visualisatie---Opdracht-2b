@@ -5,11 +5,7 @@
  */
 package com.mycompany.visualisatie.opdracht2b;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import processing.core.PApplet;
 
 /**
@@ -33,7 +29,6 @@ public class DataDrawer {
         if (data != null) {
             for (int[] mappedData : data) {
                 window.ellipse(mappedData[0], mappedData[1], 1, 1);
-
             }
         }
     }

@@ -14,5 +14,4 @@ public class Main {
     public static void main(String[] args) {
         Window.main("com.mycompany.visualisatie.opdracht2b.Window");
     }
-
 }
